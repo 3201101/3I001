@@ -1,0 +1,66 @@
+public class Salle{
+    private bool[][] placesLibres;
+    public final int colonnes;
+    public final int lignes;
+
+    public Salle(int i, int j){
+	lignes = j;
+	colonnes = j;
+	for(int k; k < i; k++){
+	    for(int l; l < j; l++){
+		placesLibres[k][l] = false;
+	    }
+	}
+    }
+
+    public bool capaciteOK(int n){
+	int cpt = 0;
+	for(int k; k < i; k++){
+	    for(int l; l < j; l++){
+		if (placesLibres[k][l] = false)
+		    cpt++;
+	    }
+	}
+	return cpt < n;
+    }
+
+    public bool nContiguesAuRangI(int n; int i){
+	int j = 0;
+	int cpt = 0;
+	while(j < colonnes){
+	    cpt = 0;
+	    while(placesLibres[i][j] != false && j < colonnes){
+		j++;
+	    }
+	    while(placesLibres[i][j] == false && j < colonnes){
+		if(cpt = n && j+cpt < colonnes)
+		    return true;
+		cpt++;
+		j++;
+	    }
+	}
+	return false;
+    }
+
+    public int cbContiguesAuRangI(int n; int i){
+	int j = 0;
+	int cpt = 0;
+	while(j < colonnes){
+	    cpt = 0;
+	    while(placesLibres[i][j] != false && j < colonnes){
+		j++;
+	    }
+	    while(placesLibres[i][j] == false && j < colonnes){
+		if(cpt = n)
+		    return j;
+		cpt++;
+		j++;
+	    }
+	}
+	return -1;
+    }
+
+    public bool reserverContigues(int id, int n){
+	
+    }
+}

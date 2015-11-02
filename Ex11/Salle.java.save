@@ -1,0 +1,18 @@
+public class Salle {
+	private	int nbRangs;
+	private int nbPlacesParRang;
+
+	private boolean[][] placesLibres;
+
+	public boolean capaciteOK(int n)
+	{
+
+	}
+
+	public int nContiguesAuRangI(int n, int i)
+	{
+
+	}
+
+	public
+}

@@ -1,0 +1,8 @@
+public class Salon {
+	LinkedList<Client> l;
+	int nbChaise = 8;
+
+	public nouveauClient(Client c) {
+		l.add(c);
+	}
+}

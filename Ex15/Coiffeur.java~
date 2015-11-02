@@ -1,0 +1,12 @@
+public class Coiffeur implements Runnable {
+	Salon s;
+
+	public run() {
+		while(true) {
+			synchronized(s) while(c=get Client(s) == NULL)
+				wait;
+		}
+		c.coiffer();
+	}
+}
+
