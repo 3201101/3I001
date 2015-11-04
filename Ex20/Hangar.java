@@ -4,7 +4,7 @@ public class Hangar {
 
 	public Hangar(int n) {
 		id = n;
-		loco = NULL;
+		loco = null;
 	}
 
 	public int getPos() {
@@ -12,15 +12,19 @@ public class Hangar {
 	}
 
 	public boolean isEmpty() {
-		return (loco == NULL);
+		return (loco == null);
 	}
 
-	public void entrer(int id) {
+	public void entrer(Loco l) {
+		System.out.println("entrée dans le hangar " + id);
+		loco = l;
+	}
 
+	public Loco sortir() {
+		System.out.println("sortie du hangar " + id);		
+		Loco l = loco;
+		loco = null;
+		return l;
 	}
-/*
-	public void sortir() {
-		
-	}
-*/
+
 }

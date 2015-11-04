@@ -14,6 +14,7 @@ public class PoolHangars {
 			if(hangars[i].isEmpty())
 				return hangars[i].getPos();
 		}
+		return -1;
 	}
 
 	public Hangar getHangar(int n) {
