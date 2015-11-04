@@ -14,5 +14,14 @@ public class Test {
 		l2.start();
 		e1.start();
 		e2.start();
+
+		try { Thread.sleep(10000); } catch (Exception e) {}
+
+		p1.stop();
+		p2.stop();
+		l1.stop();
+		l2.stop();
+		e1.stop();
+		e2.stop();
 	}
 }

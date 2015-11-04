@@ -10,12 +10,10 @@ public class Lecteur implements Runnable {
 	}
 
 	public void run() {
-		int n = 0;
 		while(true) {
 			try {
-				System.out.println("Lecteur " + id + " lit " + d.read(n));
-				n++;
 				Thread.sleep(500);
+				d.read(id);
 			}
 			catch (Exception e) {
 				System.out.println(e.getMessage());

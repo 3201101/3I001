@@ -12,10 +12,9 @@ public class Producteur implements Runnable {
 	public void run() {
 		while(true) {
 			try {
-				int n = (int)(Math.random()*1000);
-				System.out.println("Producteur " + id + " ajoute " + n);
-				d.add(n);
 				Thread.sleep(500);
+				int n = (int)(Math.random()*50);
+				d.add(id, n);
 			}
 			catch (Exception e) {
 				System.out.println(e.getMessage());

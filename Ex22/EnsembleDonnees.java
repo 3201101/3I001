@@ -11,12 +11,16 @@ public class EnsembleDonnees {
 
 	/**
 	 * Ajoute une valeur aux données
+	 * @param id identifiant du producteur
 	 * @param n valeur à ajourer
 	 */
-	public void add(int n) {
+	public void add(int id, int n) {
 		l.writeLock().lock();
 		try {
+			System.out.println("Producteur " + id + " ajoute " + n);
+			int s = data.size();
 			data.add(n);
+			System.out.println("    Ajout [" + s + "] = " + n);
 		}
 		finally {
 			l.writeLock().unlock();
@@ -25,17 +29,15 @@ public class EnsembleDonnees {
 
 	/**
 	 * Parcoure et affiche les données
-	 * @param  n identifiant de la valeur à lire
-	 * @return valeur lue
+	 * @param  id identifiant du lecteur
 	 */
-	public int read(int n) throws InexistantException {
+	public void read(int id) throws InexistantException {
 		l.readLock().lock();
 		try {
-			int s = data.size();
-			if(s != 0)
-				return data.get(n%s);
-			else
-				throw new InexistantException(n);
+			System.out.println("Lecteur " + id + " lit le tableau");
+			for(int i = 0; i < data.size(); i++) {
+				System.out.println("    Case [" + i + "] = " + data.get(i));
+			}
 		}
 		finally {
 			l.readLock().unlock();
@@ -44,11 +46,13 @@ public class EnsembleDonnees {
 
 	/**
 	 * Supprime une valeur des données
+	 * @param id identifiant de l'effaceur
 	 * @param n Valeur à supprimer
 	 */
-	public void delete(int n) throws InexistantException {
+	public void delete(int id, int n) throws InexistantException {
 		l.writeLock().lock();
 		try {
+			System.out.println("Effaceur " + id + " efface " + n);
 			if(!data.remove(new Integer(n))) {
 				throw new InexistantException(n);
 			}

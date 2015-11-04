@@ -12,10 +12,9 @@ public class Effaceur implements Runnable {
 	public void run() {
 		while(true) {
 			try {
-				int n = (int)(Math.random()*1000);
-				System.out.println("Effaceur " + id + " cherche " + d.read(n));
-				d.delete(n);
 				Thread.sleep(500);
+				int n = (int)(Math.random()*50);
+				d.delete(id, n);
 			}
 			catch (Exception e) {
 				System.out.println(e.getMessage());
