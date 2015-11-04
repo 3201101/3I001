@@ -4,10 +4,19 @@ public class Requete {
 	private int id;
 	private int t;
 
-	public Requete(Client client, int type = 0) {
+	public Requete(Client client, int type) {
 		id = i;
 		i++;
 		t = type;
 		c = client;
+		System.out.println("Création requête " + id + " de type " + t);
+	}
+
+	public Client getClient() {
+		return c;
+	}
+
+	public int getId() {
+		return id;
 	}
 }
